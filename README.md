@@ -1,6 +1,6 @@
 # Delay API Service Docs
 
-Docs for delay api endpoints.
+Docs for delay api endpoints. Currently very much a work in progress.
 
 ## Authenticated Requests
 
@@ -646,7 +646,15 @@ Gets all subscriptions `auth_token` has access to.
                 "id": "",
                 "route_id": "",
                 "trip_id": "",
-                "stop_time_id": "",
+                "stop_time": {
+                    "stop_time_id": "",
+                    "stop_id": "",
+                    "stop_name": "",
+                    "stop_code": "",
+                    "arrival_time": "",
+                    "departure_time": ""
+                },
+                "days": ["Mon", "Wed"],
                 "date_created": "",
                 "archived": false
             },
@@ -654,10 +662,18 @@ Gets all subscriptions `auth_token` has access to.
                 "id": "",
                 "route_id": "",
                 "trip_id": "",
-                "stop_time_id": "",
+                "stop_time": {
+                    "stop_time_id": "",
+                    "stop_id": "",
+                    "stop_name": "",
+                    "stop_code": "",
+                    "arrival_time": "",
+                    "departure_time": ""
+                },
+                "days": ["Mon", "Wed"],
                 "date_created": "",
                 "archived": true
-            }
+            },
         ]
     },
     "errors": null,
@@ -681,9 +697,17 @@ Gets single subscription
     "success": true,
     "result": {
         "id": "",
-        "route_id": "",        
+        "route_id": "",
         "trip_id": "",
-        "stop_time_id": "",
+        "stop_time": {
+            "stop_time_id": "",
+            "stop_id": "",
+            "stop_name": "",
+            "stop_code": "",
+            "arrival_time": "",
+            "departure_time": ""
+        },
+        "days": ["Mon", "Wed"],
         "date_created": "",
         "archived": false
     },
@@ -707,6 +731,7 @@ Name | Type | Optional | Description
 -----|------|----------|-------------
 trip_id | string | n | Delay `trip_id`
 stop_time_id | string | n | Delay `stop_time_id`
+days | string[] | n | Array of three letter day codes for which the user wishes to subscribe to the trip for
 notification_ids | uuid[] | y | ID of notification methods. If not present firebase cloud tokens used as default. 
 
 #### Response
@@ -718,7 +743,15 @@ notification_ids | uuid[] | y | ID of notification methods. If not present fireb
         "id": "",
         "route_id": "",
         "trip_id": "",
-        "stop_time_id": "",
+        "stop_time": {
+            "stop_time_id": "",
+            "stop_id": "",
+            "stop_name": "",
+            "stop_code": "",
+            "arrival_time": "",
+            "departure_time": ""
+        },
+        "days": ["Mon", "Wed"],
         "date_created": "",
         "archived": false
     },
@@ -742,9 +775,10 @@ Modify an existing subscription. In order to stop a user receiving notifications
 
 Name | Type | Optional | Description
 -----|------|----------|-------------
-trip_id | string | n | Delay `trip_id`
-stop_time_id | string | n | Delay `stop_time_id`
-archived | boolean | n | Controls whether or not user gets notification
+trip_id | string | y | Delay `trip_id`
+stop_time_id | string | y | Delay `stop_time_id`
+days | string[] | y | Array of three letter day codes for which the user wishes to subscribe to the trip for
+archived | boolean | y | Controls whether or not user gets notification
 
 #### Response
 
@@ -755,9 +789,17 @@ archived | boolean | n | Controls whether or not user gets notification
         "id": "",
         "route_id": "",
         "trip_id": "",
-        "stop_time_id": "",
+        "stop_time": {
+            "stop_time_id": "",
+            "stop_id": "",
+            "stop_name": "",
+            "stop_code": "",
+            "arrival_time": "",
+            "departure_time": ""
+        },
+        "days": ["Mon", "Wed"],
         "date_created": "",
-        "archived": true
+        "archived": false
     },
     "errors": null,
     "meta": {
