@@ -98,7 +98,7 @@ Returns info for all users auth_token has access to.
 
 Returns info for a particular user.
 
-``GET /users/:id ``
+``GET /users/:user_id ``
 
 #### Response
 
@@ -124,7 +124,7 @@ Returns info for a particular user.
 
 Updates given user info. Note that when changing the password `new_password`, `new_password_repeated` and `old_password` are required. Also note that a change in email address wil trigger a new confirmation email to be sent out before the change is applied.
 
-``PATCH /users/:id ``
+``PATCH /users/:user_id ``
 
 #### Parameters
 
@@ -174,7 +174,7 @@ May return error code 1003.
 
 Deletes a given user. This option will revoke all active ``auth_token`` for that user.
 
-``DELETE /users/:id ``
+``DELETE /users/:user_id ``
 
 #### Response
 
@@ -349,7 +349,7 @@ Gets all routes currently in the system. In the context of Delay it is almost al
 
 Get route by id. 
 
-``GET /routes/:id``
+``GET /routes/:route_id``
 
 #### Response
 
@@ -381,7 +381,7 @@ Get route by id.
 
 Get all trips for a particular route.
 
-``GET /routes/:id/trips``
+``GET /routes/:route_id/trips``
 
 #### Response
 
@@ -547,7 +547,7 @@ Note: Day in this context is the 3 letter day representation i.e Mon,Tue, Thu et
 
 Gets trip by id.
 
-``GET /trips/:id``
+``GET /trips/:trip_id``
 
 #### Response
 
@@ -606,7 +606,7 @@ Gets trip by id.
 
 Gets location of trip.
 
-``GET /trips/:id/location``
+``GET /trips/:trip_id/location``
 
 #### Response
 
@@ -688,7 +688,7 @@ Gets all subscriptions `auth_token` has access to.
 
 Gets single subscription
 
-``GET /subscriptions/:id``
+``GET /subscriptions/:subscription_id``
 
 #### Response
 
@@ -769,7 +769,7 @@ May return error code 1007.
 
 Modify an existing subscription. In order to stop a user receiving notifications for that subscription it must be archived. 
 
-``PATCH /subscriptions/:id``
+``PATCH /subscriptions/:subscription_id``
 
 #### Parameters
 
@@ -902,7 +902,7 @@ Returns all notification methods associated with a user account.
 
 Returns a single notification by id.
 
-``GET /notifications/:id``
+``GET /notifications/:notification_id``
 
 #### Response
 
@@ -930,7 +930,7 @@ Returns a single notification by id.
 
 Deletes given notification method. 
 
-``DELETE /notifications/:id``
+``DELETE /notifications/:notification_id``
 
 #### Response
 
@@ -962,6 +962,7 @@ Code | Status | Description
 405 | Method Not Allowed | Incorrect HTTP method
 409 | Conflict | User already exists
 415 | Unsupported Media Type | Request was invalid JSON
+418 | I'm a tea pot
 429 | Too Many Requests | `Auth_token` was rate limited
 
 ### Custom
@@ -984,11 +985,11 @@ Code | Description
 4. POST `route_type` and `params` to `/routes/search`
 5. Display returned routes to user and let them select one
 6. Call `/routes/:id/trips` on the selected route, using its Delay id
-7. Prompt user for days they are interested in
+7. Prompt user for days they are interested in, save these as `days` for later
 8. Display only trips matching the given days
 9. Show users `trip_begin` and `trip_end` and prompt them to select the time frame their trip falls into
 10. Display to the user all stops and stop times for the trip that matches the chosen time frame 
-11. POST selection to `/subscriptions` to create a new subscription
+11. POST `stop_time_id` and `trip_id` along with `days` to `/subscriptions` to create a new subscription
 
 ## Note
 
