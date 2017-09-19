@@ -24,7 +24,7 @@ Web | Delay-Web-<$Version>
 
 ### Create New user
 
-Create a new user. All fields can be left blank and a new anonymous user will be created. 
+Create a new user. All fields can be left blank and anon set to true to make a new anonymous user, otherwise set anon to false.
 
 ``POST /users``
 
@@ -32,10 +32,10 @@ Create a new user. All fields can be left blank and a new anonymous user will be
 
 Name | Type | Optional | Description
 -----|------|----------|-------------
-first_name | string | y | Users first name
-last_name | string | y | Users last name
-email | string | y | Users email address
-password | string | y | Users password
+name | string | n | Users Name
+email | string | n | Users email address
+password | string | n | Users password
+anon | bool | y | Whether or not a user is anonymous 
 
 Note: if email is specified, password must also be specified
 
@@ -73,15 +73,13 @@ Returns info for all users auth_token has access to.
     "result": [
         {       
             "id": "7096ca22-435a-470b-9d21-e3ddecbfbc3c",
-            "first_name": "Bobby",
-            "last_name": "Tables",
+            "name": "Bobby Tables",
             "email": "bobby.tables@example.com",
             "created_on": "1501709004"
         },
         {       
             "id": "aadd50f0-4063-4c3d-a051-15cde26160f5",
-            "first_name": "Homer",
-            "last_name": "Simpson",
+            "name": "Homer Simpson",
             "email": "h.simpson@example.com",
             "created_on": "1501709004"
         }
@@ -107,8 +105,7 @@ Returns info for a particular user.
     "success": true,
     "result": {
         "id": "7096ca22-435a-470b-9d21-e3ddecbfbc3c",
-        "first_name": "Bobby",
-        "last_name": "Tables",
+        "name": "Bobby Tables",
         "email": "bobby.tables@example.com",
         "created_on": "1501709004"
     },
@@ -146,15 +143,13 @@ old_password | string | y | Users old password
     "result": {
         "before": {
             "id": "7096ca22-435a-470b-9d21-e3ddecbfbc3c",
-            "first_name": "Bobby",
-            "last_name": "Tables",
+            "name": "Bobby Tables",
             "email": "bobby.tables@example.com",
             "created_on": "1501709004"
         },
         "after": {
             "id": "7096ca22-435a-470b-9d21-e3ddecbfbc3c",
-            "first_name": "Bobby",
-            "last_name": "Tables",
+            "name": "Bobby Tables",
             "email": "b.tables@example.com",
             "created_on": "1501709004"
         }
