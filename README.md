@@ -24,7 +24,9 @@ Web | Delay-Web-<$Version>
 
 ### Create New user
 
-Create a new user. All fields can be left blank and anon set to true to make a new anonymous user, otherwise set anon to false.
+Create a new user. All fields can be left blank and an anon user will be created.
+If you specify an email, you must also specify a password. If a name is specified an 
+email and password are required. 
 
 ``POST /users``
 
@@ -35,7 +37,6 @@ Name | Type | Optional | Description
 name | string | n | Users Name
 email | string | n | Users email address
 password | string | n | Users password
-anon | bool | y | Whether or not a user is anonymous 
 
 Note: if email is specified, password must also be specified
 
