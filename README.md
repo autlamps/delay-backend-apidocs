@@ -25,7 +25,7 @@ Web | Delay-Web-<$Version>
 ### Create New user
 
 Create a new user. All fields can be left blank and an anon user will be created.
-If you specify an email, you must also specify a password. If a name is specified an 
+If you specify an email, you must also spe~cify a password. If a name is specified an 
 email and password are required. 
 
 ``POST /users``
@@ -44,7 +44,7 @@ Note: if email is specified, password must also be specified
 
 ``` json
 {
-    "success": true,
+    "success": true,~
     "result": {
         "id": "7096ca22-435a-470b-9d21-e3ddecbfbc3c",
         "auth_token": "5f12cd09-0f11-4ed7-867d-3e8884948920",
@@ -282,20 +282,23 @@ Gets a a list of all services currently running ahead or behind schedule.
         "valid_until": "1501738215",
         "trips": [
             {
-                "id": "894a1261-88b8-49a9-8c07-142fc4299568",
-                "route_id": "",
-                "trip_id": "",
-                "route_long_name": "",
-                "route_short_name": "",
-                "next_stop_id": "",
-                "next_stop_lat": "",
-                "next_stop_long": "",
-                "next_stop_arrival_time": "",
-                "delay": 100,
-                "vehicle_id": "",
-                "current_lat": "",
-                "current_long": ""
-            }
+                "trip_id": "87064d8a-63e6-472e-a6d3-4d9cdd4bc010",
+                "route_id": "3077a24a-a01e-4a34-9112-d457bf8701aa",
+                "route_long_name": "City Centre to Rosebank Rd via New North Rd",
+                "route_short_name": "221",
+                "next_stop": {
+                    "id": "a221dc69-300d-431d-93ae-ba1bdd7b6539",
+                    "name": "100 New North Rd",
+                    "lat": -36.86683,
+                    "lon": 174.75697,
+                    "delay": 412,
+                    "scheduled_arrival": "19:24:07",
+                    "eta": "19:30:59"
+                },
+                "vehicle_id": "3096",
+                "lat": -36.86598353,
+                "lon": 174.75866391
+            },
         ]
     },
     "errors": null,
