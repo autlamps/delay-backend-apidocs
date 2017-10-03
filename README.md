@@ -216,7 +216,7 @@ password | string | n | Users password
 }
 ```
 
-May return error code 1001.
+May return error code 1000, 1001.
 
 ### Delete Access Token
 ##### *Authentication required*
@@ -968,6 +968,7 @@ Code | Status | Description
 
 Code | Description
 -----|---------------------
+1000 | Email doesn't match any registered account
 1001 | Incorrect email or password
 1002 | Returned if password is not set when email is or vice versa
 1003 | Returned if `new_password`, `new_password_repeated` or `old_password` are not all set 
