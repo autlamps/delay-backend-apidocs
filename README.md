@@ -25,7 +25,7 @@ Web | Delay-Web-<$Version>
 ### Create New user
 
 Create a new user. All fields can be left blank and an anon user will be created.
-If you specify an email, you must also spe~cify a password. If a name is specified an 
+If you specify an email, you must also specify a password. If a name is specified an 
 email and password are required. 
 
 ``POST /users``
@@ -44,7 +44,7 @@ Note: if email is specified, password must also be specified
 
 ``` json
 {
-    "success": true,~
+    "success": true,
     "result": {
         "id": "7096ca22-435a-470b-9d21-e3ddecbfbc3c",
         "auth_token": "5f12cd09-0f11-4ed7-867d-3e8884948920",
@@ -731,7 +731,7 @@ Name | Type | Optional | Description
 trip_id | string | n | Delay `trip_id`
 stop_time_id | string | n | Delay `stop_time_id`
 days | string[] | n | Array of three letter day codes for which the user wishes to subscribe to the trip for
-notification_ids | uuid[] | y | ID of notification methods. If not present firebase cloud tokens used as default. 
+notification_ids | uuid[] | y | ID of notification methods for which the user wishes to receive delay notifications for  
 
 #### Response
 
@@ -975,7 +975,7 @@ Code | Description
 1004 | Bad behavior warning. Returned if caller is doing something that constitutes bad behavior
 1005 | Trip not active
 1006 | User not premium. Txt notification method cannot be added.
-1007 | No notification id specified and no default firebase 
+1007 | No notification id specified
 
 ## Suggested Mobile Subscribe Flow
 
