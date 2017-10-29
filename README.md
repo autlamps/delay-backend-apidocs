@@ -387,51 +387,58 @@ Get all trips for a particular route.
 ``` json
 {
     "success": true,
+    "errors": null,
     "result": {
-        "count": 1,
-        "valid_until": "1502928000",
+        "route": {
+            "id": "24f11799-6b9a-406f-927a-bf6e69add608",
+            "gtfs_id": "81352-20171013114012_v59.18",
+            "agency_id": "0eb30a1e-cc9d-4c09-b6d3-e7d23a08efe5",
+            "short_name": "813",
+            "long_name": "Takapuna Grammar To Takapuna",
+            "route_type": "3"
+        },
         "trips": [
             {
-                "id": "66407722-89f0-4b71-8797-80971f7b2b22",
-                "route_id": "",
-                "route_long_name": "",
-                "route_short_name": "",
-                "route_type": "",
-                "trip_id": "",
-                "headsign": "",
-                "trip_begin": "",
-                "trip_end": "",
-                "days": [ "Mon", "Tue", "Wed", "Thu", "Fri" ],
-                "stops": [
-                    {
-                        "id": "",
-                        "stop_id": "",
-                        "stop_name": "",
-                        "stop_seq": 1,
-                        "stop_lat": "",
-                        "stop_long": "",
-                        "arrival_time": "",
-                        "departure_time": ""
-                    },
-                                        {
-                        "id": "",
-                        "stop_id": "",
-                        "stop_name": "",
-                        "stop_seq": 2,
-                        "stop_lat": "",
-                        "stop_long": "",
-                        "arrival_time": "",
-                        "departure_time": ""
-                    }
-                ]
+                "id": "6098e451-4d0e-4192-8557-91d106487bd2",
+                "route_id": "24f11799-6b9a-406f-927a-bf6e69add608",
+                "service_id": "f26e1b07-c6aa-4366-8ed0-96b2eb7ca23b",
+                "gtfsid": "18138100119-20171013114012_v59.18",
+                "headsign": "Schools",
+                "calendar": {
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": false,
+                    "sunday": false,
+                    "start_time": "03:05:04",
+                    "end": "03:16:04"
+                }
+            },
+            {
+                "id": "032c8617-4e08-454c-89b2-5cfdc9ae91ee",
+                "route_id": "24f11799-6b9a-406f-927a-bf6e69add608",
+                "service_id": "6dc8398b-2fd9-4f6b-8011-f6fc151c6dca",
+                "gtfsid": "18138100116-20171013114012_v59.18",
+                "headsign": "Schools",
+                "calendar": {
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": false,
+                    "sunday": false,
+                    "start_time": "03:04:04",
+                    "end": "03:15:04"
+                }
             }
         ]
     },
-        ]
-    },
-    "errors": null,
     "meta": {
-        // meta info
+        "version": "Alpha",
+        "by": "Izaac Crooke, Dhayrin Colbert, Dominic Porter, Hayden Woodhead"
     }
 }
 ```
