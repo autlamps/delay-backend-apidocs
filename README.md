@@ -1036,17 +1036,14 @@ Code | Description
 
 ## Suggested Mobile Subscribe Flow
 
-1. Ask user whether they would like to subscribe to a bus, train or ferry
-2. Prompt the user to search 
-3. Split user search into an array of each word
-4. POST `route_type` and `params` to `/routes/search`
-5. Display returned routes to user and let them select one
-6. Call `/routes/:id/trips` on the selected route, using its Delay id
-7. Prompt user for days they are interested in, save these as `days` for later
-8. Display only trips matching the given days
-9. Show users `trip_begin` and `trip_end` and prompt them to select the time frame their trip falls into
-10. Display to the user all stops and stop times for the trip that matches the chosen time frame 
-11. POST `stop_time_id` and `trip_id` along with `days` to `/subscriptions` to create a new subscription
+1. Call `/routes` to get all routes
+2. Prompt user to search and limit by short name, long name and [route type](https://developers.google.com/transit/gtfs/reference/#routestxt)
+3. Call `/routes/:route_id/trips` with the users selected route
+4. Display selected trips to users. Highly recommend showing the start time and end time to allow user to narrow down selection.
+5. Call `/trips/:trip_id/stoptimes` on user selected trip
+6. Display stoptimes to user 
+7. On selection ask which days they wish to subscribe to
+8. Post to `/subscriptions` as per documentation
 
 ## Note
 
