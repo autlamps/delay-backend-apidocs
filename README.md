@@ -631,6 +631,56 @@ Gets location of trip.
 }
 ```
 
+### Get StopTimes for Trip
+##### *Authentication required*
+
+Gets all stoptimes for a given trip
+
+``GET /trips/:trip_id/stoptimes``
+
+#### Response
+``` json
+{
+    "success": true,
+    "errors": null,
+    "result": {
+        "count": 2,
+        "stop_time": [
+            {
+                "id": "9b09750a-f93b-409a-bb8f-1b2fab6c8578",
+                "trip_id": "6098e451-4d0e-4192-8557-91d106487bd2",
+                "stop_sequence": 1,
+                "stop_info": {
+                    "id": "35688b3d-393c-4b26-93b8-7669e5d50ad5",
+                    "name": "257 Lake Rd",
+                    "lat": -36.8004,
+                    "lon": 174.78639
+                },
+                "departure": "15:26:00",
+                "arrival": "15:26:00"
+            },
+            {
+                "id": "dc0b83b7-6cec-4a07-a487-fe6f3d58834a",
+                "trip_id": "6098e451-4d0e-4192-8557-91d106487bd2",
+                "stop_sequence": 2,
+                "stop_info": {
+                    "id": "f4afd7ff-0443-4825-9a75-6d9460123677",
+                    "name": "293 Lake Rd",
+                    "lat": -36.79806,
+                    "lon": 174.78421
+                },
+                "departure": "15:27:52",
+                "arrival": "15:27:52"
+            }
+        ]
+    },
+    "meta": {
+        "version": "Alpha",
+        "by": "Izaac Crooke, Dhayrin Colbert, Dominic Porter, Hayden Woodhead"
+    }
+}
+```
+
 May return error code 1005 if the trip is not active.
 
 ### Get All Subscriptions
