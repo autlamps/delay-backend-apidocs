@@ -695,46 +695,72 @@ Gets all subscriptions `auth_token` has access to.
 ``` json
 {
     "success": true,
-    "result": {
-        "count": 2,
-        "subscriptions": [
-            {
-                "id": "",
-                "route_id": "",
-                "trip_id": "",
-                "stop_time": {
-                    "stop_time_id": "",
-                    "stop_id": "",
-                    "stop_name": "",
-                    "stop_code": "",
-                    "arrival_time": "",
-                    "departure_time": ""
-                },
-                "days": ["Mon", "Wed"],
-                "date_created": "",
-                "archived": false
-            },
-            {
-                "id": "",
-                "route_id": "",
-                "trip_id": "",
-                "stop_time": {
-                    "stop_time_id": "",
-                    "stop_id": "",
-                    "stop_name": "",
-                    "stop_code": "",
-                    "arrival_time": "",
-                    "departure_time": ""
-                },
-                "days": ["Mon", "Wed"],
-                "date_created": "",
-                "archived": true
-            },
-        ]
-    },
     "errors": null,
+    "result": [
+        {
+            "id": "d06cb68d-478f-49f7-aa9a-ef29d50b41a0",
+            "trip_id": "7450f9b7-cefa-4e6e-a9fe-da04978b6f08",
+            "user_id": "b814640b-be37-47e0-bd1b-25770dad9d36",
+            "archived": false,
+            "monday": true,
+            "tuesday": true,
+            "wednesday": false,
+            "thursday": false,
+            "friday": false,
+            "saturday": false,
+            "sunday": false,
+            "notification_ids": [
+                "74d4a530-be90-487e-bca2-5aebeb0bcec0"
+            ],
+            "stop_time": {
+                "id": "eaf38dc3-9c02-4682-baae-562046793022",
+                "trip_id": "7450f9b7-cefa-4e6e-a9fe-da04978b6f08",
+                "stop_sequence": 12,
+                "stop_info": {
+                    "id": "d1347aec-b67a-4b4b-804e-8217a5666c7c",
+                    "name": "60 King George Ave",
+                    "lat": -36.88885,
+                    "lon": 174.76965
+                },
+                "departure": "14:51:10",
+                "arrival": "14:51:10"
+            },
+            "created": 1509328705
+        },
+        {
+            "id": "cedd2951-04d8-4466-83b3-21f0573d0fb0",
+            "trip_id": "7450f9b7-cefa-4e6e-a9fe-da04978b6f08",
+            "user_id": "b814640b-be37-47e0-bd1b-25770dad9d36",
+            "archived": false,
+            "monday": true,
+            "tuesday": true,
+            "wednesday": false,
+            "thursday": false,
+            "friday": false,
+            "saturday": false,
+            "sunday": false,
+            "notification_ids": [
+                "74d4a530-be90-487e-bca2-5aebeb0bcec0"
+            ],
+            "stop_time": {
+                "id": "eaf38dc3-9c02-4682-baae-562046793022",
+                "trip_id": "7450f9b7-cefa-4e6e-a9fe-da04978b6f08",
+                "stop_sequence": 12,
+                "stop_info": {
+                    "id": "d1347aec-b67a-4b4b-804e-8217a5666c7c",
+                    "name": "60 King George Ave",
+                    "lat": -36.88885,
+                    "lon": 174.76965
+                },
+                "departure": "14:51:10",
+                "arrival": "14:51:10"
+            },
+            "created": 1509329133
+        }
+    ],
     "meta": {
-        // meta info
+        "version": "Alpha",
+        "by": "Izaac Crooke, Dhayrin Colbert, Dominic Porter, Hayden Woodhead"
     }
 }
 ```
