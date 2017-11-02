@@ -812,34 +812,48 @@ Create a subscription
 Name | Type | Optional | Description
 -----|------|----------|-------------
 trip_id | string | n | Delay `trip_id`
-stop_time_id | string | n | Delay `stop_time_id`
+stoptime_id | string | n | Delay `stoptime_id`
 days | string[] | n | Array of three letter day codes for which the user wishes to subscribe to the trip for
-notification_ids | uuid[] | y | ID of notification methods for which the user wishes to receive delay notifications for  
+notification_ids | uuid[] | n | ID of notification methods for which the user wishes to receive delay notifications for  
 
 #### Response
 
 ``` json
-{
+
     "success": true,
-    "result": {
-        "id": "",
-        "route_id": "",
-        "trip_id": "",
-        "stop_time": {
-            "stop_time_id": "",
-            "stop_id": "",
-            "stop_name": "",
-            "stop_code": "",
-            "arrival_time": "",
-            "departure_time": ""
-        },
-        "days": ["Mon", "Wed"],
-        "date_created": "",
-        "archived": false
-    },
     "errors": null,
+    "result": {
+        "id": "3068dcec-d5d8-4562-90df-f62884519517",
+        "trip_id": "30f5831b-f35a-4f3b-bcf2-edb786b70ea8",
+        "user_id": "0bd4ae69-d3af-491c-a11a-ccb7b086871e",
+        "archived": false,
+        "monday": true,
+        "tuesday": false,
+        "wednesday": true,
+        "thursday": false,
+        "friday": false,
+        "saturday": false,
+        "sunday": false,
+        "notification_ids": [
+            "22fbb1ba-7556-4b3b-a499-d7492e637a60"
+        ],
+        "stop_time": {
+            "id": "1c35e020-9e4c-44d7-8c77-0638de05d406",
+            "trip_id": "0f8fb9bd-db5e-4162-a7d9-0d41fb1049d8",
+            "stop_sequence": 21,
+            "stop_info": {
+                "id": "4ba949f9-cc5b-488d-a092-ad9b79e37091",
+                "name": "1392 Whangaparaoa Rd",
+                "lat": -36.60359,
+                "lon": 174.80204
+            },
+            "departure": "17:21:46",
+            "arrival": "17:21:46"
+        }
+    },
     "meta": {
-        // meta info
+        "version": "Alpha",
+        "by": "Izaac Crooke, Dhayrin Colbert, Dominic Porter, Hayden Woodhead"
     }
 }
 ```
